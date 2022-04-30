@@ -15,6 +15,7 @@ void Player::bet(bool neqCero, bool condition) {
 }
 void Player::lose_bet() {
   int bet = this->number_list.front() + this->number_list.back();
+  cout << " |$" << bet << "| ";
   this->cash -= bet;
   this->number_list.pop_front();
   this->number_list.pop_back();
@@ -26,6 +27,7 @@ void Player::win_bet() {
     this->initialize_numbers();
     bet = 5;
   }
+  cout << " |$" << bet << "| ";
   this->cash += bet;
   this->number_list.push_back(bet);
 }
