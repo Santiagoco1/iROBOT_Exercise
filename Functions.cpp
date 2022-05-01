@@ -23,8 +23,6 @@ int roulette(Player Even, Player Odd, Player Mayor, Player Minor, Player Red, Pl
     Black.bet(random != 0, !is_red(random));
     cout << "\n" << endl;
   }
-  cout << Even.give_cash() << " " << Odd.give_cash() << " " << Mayor.give_cash() << " " <<  
-          Minor.give_cash() << " " << Red.give_cash() << " " << Black.give_cash();
 
   return Even.give_cash() + Odd.give_cash() + Mayor.give_cash() + 
           Minor.give_cash() + Red.give_cash() + Black.give_cash();
