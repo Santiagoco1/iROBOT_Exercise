@@ -8,11 +8,11 @@ void Player::initialize_numbers() {
   number_list = {1, 2, 3, 4};
 }
 void Player::bet(bool neqCero, bool condition) {
-  int bet = this->give_bet();
+  int actual_bet = this->give_bet();
   if(neqCero && condition) {
-    this->win_bet(bet);
+    this->win_bet(actual_bet);
   }
-  else this->lose_bet(bet);
+  else this->lose_bet(actual_bet);
 }
 void Player::lose_bet(int bet) {
   this->cash -= bet;

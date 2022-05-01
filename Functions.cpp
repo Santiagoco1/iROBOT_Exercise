@@ -3,12 +3,12 @@
 bool is_even(int number) {return number % 2 == 0;} 
 bool is_mayor(int number) {return number > 18;}
 bool is_red(int number) {
-  if(number > 10 && number < 19) return is_even(number);
+  if((number > 10 && number < 19) || (number > 28)) return is_even(number);
   else return !is_even(number);
 }
 int roulette(Player Even, Player Odd, Player Mayor, Player Minor, Player Red, Player Black) {
 
-  const int ROUND_MAX = 10000;
+  const int ROUND_MAX = 10;
   const int RANDOM_MAX = 37;
 
   for(int i = 0, random; i < ROUND_MAX; i++) {
@@ -23,6 +23,8 @@ int roulette(Player Even, Player Odd, Player Mayor, Player Minor, Player Red, Pl
     Black.bet(random != 0, !is_red(random));
     cout << "\n" << endl;
   }
+  cout << Even.give_cash() << " " << Odd.give_cash() << " " << Mayor.give_cash() << " " <<  
+          Minor.give_cash() << " " << Red.give_cash() << " " << Black.give_cash();
 
   return Even.give_cash() + Odd.give_cash() + Mayor.give_cash() + 
           Minor.give_cash() + Red.give_cash() + Black.give_cash();
