@@ -8,7 +8,7 @@ bool is_red(int number) {
 }
 int roulette(Player Even, Player Odd, Player Mayor, Player Minor, Player Red, Player Black) {
 
-  const int ROUND_MAX = 10;
+  const int ROUND_MAX = 10000;
   const int RANDOM_MAX = 37;
 
   for(int i = 0, random; i < ROUND_MAX; i++) {
